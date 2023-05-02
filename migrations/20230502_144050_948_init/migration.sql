@@ -9,4 +9,12 @@ so that ElectricSQL's Satellite component can sync your data.
 Write your SQLite migration below.
 */
 
-
+-- CreateTable
+CREATE TABLE Issue (
+    id TEXT PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL,
+    priority TEXT NOT NULL,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    status TEXT NOT NULL
+) WITHOUT ROWID;
