@@ -47,7 +47,8 @@
     "scripts": {
         "start": "craco start",
         "build": "craco build",
-        "test": "craco test"
+        "test": "craco test",
+        "prepare-generator": "cd ./node_modules/prisma-generator-electric/packages/generator && npm install && npm run build && chmod +x ./dist/bin.js && cd ../../../.."
     },
     "engines": {
       "node": ">=16.20.0"
@@ -99,6 +100,7 @@
         "autoprefixer": "^9.8.6",
         "postcss": "^7.0.35",
         "prisma": "^4.11.0",
+        "prisma-generator-electric": "electric-sql/prisma-generator-electric#kevindp/build-on-install",
         "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0",
         "typescript": "^4.5.5"
     }
