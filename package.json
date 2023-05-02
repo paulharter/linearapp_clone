@@ -48,6 +48,9 @@
         "build": "craco build",
         "test": "craco test"
     },
+    "engines": {
+      "node": ">=16.20.0"
+    },
     "eslintConfig": {
         "extends": [
             "react-app",

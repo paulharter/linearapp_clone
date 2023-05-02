@@ -9,6 +9,7 @@ A clone of [Linear app](https://linear.app/) made with React & [Tailwind CSS](ht
 ## Setup & Run
 
 ```bash
+nvm use v16.20.0
 $ yarn install
 $ yarn start
 ```
