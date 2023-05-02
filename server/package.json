@@ -1,0 +1,19 @@
+{
+    "name": "linearapp_server",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "electric-sql": "file:.yalc/electric-sql"
+    },
+    "scripts": {
+    },
+    "engines": {
+        "node": ">=16.20.0"
+    },
+    "devDependencies": {
+        "prisma": "^4.11.0",
+        "@prisma/generator-helper": "^4.11.0",
+        "prisma-generator-electric": "file:.yalc/prisma-generator-electric",
+        "typescript": "^4.5.5"
+    }
+}
