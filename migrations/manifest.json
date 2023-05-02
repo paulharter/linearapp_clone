@@ -1,0 +1,13 @@
+{
+  "app": "linearlite",
+  "migrations": [
+    {
+      "encoding": "escaped",
+      "name": "20230502_144050_948_init",
+      "postgres_body": null,
+      "satellite_body": [],
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "title": "init"
+    }
+  ]
+}
