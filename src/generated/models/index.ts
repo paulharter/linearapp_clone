@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import type { Prisma } from '@prisma/client';
-import { TableDescription, DBDescription, Relation } from 'electric-sql/client/model';
+import { TableSchema, DbSchema, Relation, ElectricClient, HKT } from 'electric-sql/client/model';
 
 /////////////////////////////////////////
 // HELPER FUNCTIONS
@@ -444,13 +444,12 @@ export const IssueDeleteManyArgsSchema: z.ZodType<Prisma.IssueDeleteManyArgs> = 
   where: IssueWhereInputSchema.optional(),
 }).strict()
 
-declare module 'fp-ts/HKT' {
-  interface URItoKind<A> {
-    IssueGetPayload: Prisma.IssueGetPayload<A>
-  }
+interface IssueGetPayload extends HKT {
+  readonly _A?: boolean | null | undefined | Prisma.IssueArgs
+  readonly type: Prisma.IssueGetPayload<this['_A']>
 }
 
-export const tableDescriptions = {
+export const tableSchemas = {
   Issue: {
     fields: ["id","name","priority","title","description","status","createdAt"],
     relations: [
@@ -467,7 +466,7 @@ export const tableDescriptions = {
     upsertSchema: IssueUpsertArgsSchema,
     deleteSchema: IssueDeleteArgsSchema,
     deleteManySchema: IssueDeleteManyArgsSchema
-  } as TableDescription<
+  } as TableSchema<
     z.infer<typeof IssueCreateInputSchema>,
     Prisma.IssueCreateArgs['data'],
     Prisma.IssueUpdateArgs['data'],
@@ -477,8 +476,9 @@ export const tableDescriptions = {
     never,
     Prisma.IssueFindFirstArgs['orderBy'],
     Prisma.IssueScalarFieldEnum,
-    'IssueGetPayload'
+    IssueGetPayload
   >,
 }
 
-export const dbDescription = new DBDescription(tableDescriptions)
+export const dbSchema = new DbSchema(tableSchemas)
+export type Electric = ElectricClient<typeof dbSchema>

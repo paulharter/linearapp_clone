@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "packages": {
+    "prisma-generator-electric": {
+      "signature": "da85d6f09d5af908acbb791bc27b98dc",
+      "file": true,
+      "replaced": "electric-sql/electric/generator"
+    },
+    "electric-sql": {
+      "signature": "86a8f6688ab9815a8350cfc5d5fbd172",
+      "file": true,
+      "replaced": "^0.4.3"
+    }
+  }
+}
